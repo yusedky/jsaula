@@ -1,0 +1,8 @@
+1) Ao clicar em um botão, todas as divs
+e os spans deverão sumir.
+
+2) Em um campo numérico, em sua saída, 
+uma validação deverá ser feita.
+Se o número digitado for maior que zero, deixe a 
+cor-de-fundo em verde, se for menor em vermelho.
+No mesmo campo, ao entrar, a caixa deverá ficar amarela.

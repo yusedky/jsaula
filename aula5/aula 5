@@ -1,0 +1,32 @@
+## BUSCAS:
+
+.getElementsById(str): str é uma  string que representa um id. A busca é feita pelo id "de forma exata" 
+
+.querySelector(str): str é uma string que representa um *seletor css*. Apenas o primeiro é retornado.
+
+.querySelectorAll(str): str é uma string que representa um *seletor css*, porém, é retornado **todas** as ocorrências. 
+
+.getElementsBy<fn>Name(str): A string str é o nome a ser buscado.
+    Se
+        fn == tag: Busca pelo **nome da tag**.
+        fn == class:  Busca pelo **nome da classe**.
+        fn == "":  Busca pela propriedade name. 
+        
+        
+ >> nextSibling > antes do depois -Q
+
+
+### Inserção:
+.appendChild(node): A partir da "mãe", o node é inserido na útila posição.
+
+.insertBefore(newElt,before): A partir da "mãe", insere newElt antes de before.
+
+.insert"After"(newElt, before"nextSibling"): A partir da mãe, insere antes do irmao de before.
+
+
+###Atualização:
+.replaceChild(new,old): A partir da "mãe", troca nó new pelo old.
+
+
+###Remoção:
+.removeChild(node)A partir da mãe, remove node.
