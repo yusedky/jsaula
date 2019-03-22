@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ficha de Inimigo</title>
+        <link href="trab.css" rel="stylesheet">
+    </head>
+    <body>
+        
+        <h1>Gerador de Fichas</h1>
+        <p>Gere automáticamente fichas de NPCs para sua mesa, escolha a baixo o tipo: </p>
+        
+    	<button onclick="inicCommon()">Comum</button>
+        <button onclick="inicEnemy()">Inimigo</button>
+        <button onclick="inicAlly()">Aliados</button>
+        
+        <div id="ficha"  style="display:none;" >
+            <table> 
+            <thead>
+                <tr>
+                    <th>TIPO</th>
+                    <th>PV</th>
+                    <th>PM</th>
+                    <th>CONSTITUIÇÃO</th>
+                    <th>DANO</th>
+                </tr>
+            </thead>
+            <tbody>
+                 <tr>
+                      <td>Item</td>
+                      <td>Item</td>
+                      <td>Item</td>
+                      <td>Item</td>
+                      <td>Item</td>
+                </tr>
+                 <div id="topicos">
+                     
+                     
+                 </div>
+            </tbody>
+        
+            </table>
+        </div>
+		
+		
+		<div class="tabela"></div>
+
+
+		<script type="text/javascript" src="trab.js"></script>
+    </body>
+</html>
+
+<!-- A ideia é ser um gerador automatico de fichas de NPCs, onde você escolhe apenas o tipo: Comum (civíl, feirante, vendedor, etc), Adversário (monstros e inimigos humanoides ou não) ou aliados (podem ou não entrar em combate ao seu lado.) --> 
