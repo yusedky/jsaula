@@ -6,7 +6,21 @@ body {
 
 }
 
+h1{
+    color: #7a0fd8;
+}
+
 
 td, th {
     width: 70px;
+}
+
+
+.container {
+    width: 550px;
+}
+
+
+.limpar {
+    float: right;
 }
