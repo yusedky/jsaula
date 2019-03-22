@@ -1,19 +1,15 @@
 var rolagem = ['d4', 'd6', 'd8', 'd10', 'd12'];
 
+
 function montarTabela(resp){
 	var ficha = document.getElementById("ficha");
 	ficha.style.display= "block";
-	
-	
+
 	
 	var table = document.getElementById("topicos");
-
-//	var table = document.createElement("table");
 	var vetObj = resp.dados;
-//	var tBody = document.createElement("tbody");
 	var tr = document.createElement("tr");
 	for (var i=0; i < vetObj.length; i++) {
-//		var tr = document.createElement("tr");
 		var tdTipo = document.createElement("td");
 		var tdPV = document.createElement("td");
 		var tdPM = document.createElement("td");
@@ -29,13 +25,10 @@ function montarTabela(resp){
 		tr.appendChild(tdPM);
 		tr.appendChild(tdConst);
 		tr.appendChild(tdDano);
-	//	tBody.appendChild(tr);
 	}
 	table.appendChild(tr);
 	var div = document.querySelector("#topicos");
 	div.appendChild(table);
-	
-
 }
 
 
@@ -50,4 +43,14 @@ function inicEnemy(){
 
 function inicAlly(){
 	montarTabela({dados: [{tipo:"Aliado", pv: "", pm:"", const:"", dano:""}]});
+}
+
+
+
+
+function limpar(){
+	var table = document.getElementById("topicos");
+	table.innerHTML = "";
+	var ficha = document.getElementById("ficha");
+	ficha.style.display= "none";
 }

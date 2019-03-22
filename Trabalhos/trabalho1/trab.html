@@ -10,30 +10,37 @@
         <h1>Gerador de Fichas</h1>
         <p>Gere automáticamente fichas de NPCs para sua mesa, escolha a baixo o tipo: </p>
         
-    	<button onclick="inicCommon()">Comum</button>
-        <button onclick="inicEnemy()">Inimigo</button>
-        <button onclick="inicAlly()">Aliados</button>
+        
+        <p>
+            <button onclick="inicCommon()">Comum</button>
+            <button onclick="inicEnemy()">Inimigo</button>
+            <button onclick="inicAlly()">Aliados</button>
+        </p>
+        
+        
+        <p>
+            <button onclick="limpar()">Limpar</button>
+        </p>
+    	
         
         <div id="ficha"  style="display:none;" >
             <table> 
-            <thead>
-                <tr>
-                    <th>TIPO</th>
-                    <th>PV</th>
-                    <th>PM</th>
-                    <th>CONSTITUIÇÃO</th>
-                    <th>DANO</th>
-                </tr>
-            </thead>
-            <tbody id="topicos">
-            </tbody>
-        
+                <thead>
+                    <tr>
+                        <th>TIPO</th>
+                        <th>PV</th>
+                        <th>PM</th>
+                        <th>CONSTITUIÇÃO</th>
+                        <th>DANO</th>
+                    </tr>
+                </thead>
+                <tbody id="topicos">
+                </tbody>
             </table>
         </div>
 		
 		
-		<div class="tabela"></div>
-
+		
 
 		<script type="text/javascript" src="trab.js"></script>
     </body>
