@@ -19,7 +19,7 @@ function montarTabela(resp){
 		tdPV.innerHTML = Math.floor(Math.random() * 40) + 10;
 		tdPM.innerHTML = Math.floor(Math.random() * 30);
 		tdConst.innerHTML = Math.floor(Math.random() * 15) + 5;
-		tdDano.innerHTML = (Math.floor(Math.random() * 3) + 1) + rolagem[Math.floor(Math.random() * 4)];
+		tdDano.innerHTML = (Math.floor(Math.random() * 3) + 1) + rolagem[Math.floor(Math.random() * 5)];
 		tr.appendChild(tdTipo);
 		tr.appendChild(tdPV);
 		tr.appendChild(tdPM);
@@ -28,7 +28,6 @@ function montarTabela(resp){
 	}
 	table.appendChild(tr);
 	var div = document.querySelector("#topicos");
-	div.appendChild(table);
 }
 
 
