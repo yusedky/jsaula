@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ficha de NPC</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+            body {
+                font-family: 'Roboto', sans-serif;
+               /* color: #f99442;*/
+            
+            }
+            
+            h1{
+                color: #7a0fd8;
+            }
+            
+            #ficha{
+                display: none;
+            }
+            
+            td, th {
+                background-color: #f4f4f4;
+                width: 70px;
+                padding: 3px;
+            }
+            
+            td {
+                padding: 3px 20px;
+            } 
+            
+            .container {
+                width: 550px;
+            }
+            
+            
+            .limpar {
+                float: right;
+            }
+            
+            
+            .Inimigo {
+                color: crimson;
+            }
+            
+            .Aliado {
+                color: #0dad72;
+            }
+
+        </style>
+    </head>
+    <body>
+        
+        <h1>Gerador de Fichas</h1>
+        <p>Gere automáticamente fichas de NPCs para sua mesa, escolha a baixo o tipo: </p>
+        
+        <p> Insira a quantidade a ser gerada de NPCs do mesmo tipo: <input type="text" id="qtd" /></p>
+        
+        <p class="container">
+            <button onclick="inicCommon()">Comum</button>
+            <button onclick="inicEnemy()">Inimigo</button>
+            <button onclick="inicAlly()">Aliado</button>
+            
+            <button class="limpar" onclick="limpar()">Limpar</button>
+        </p>
+        
+        
+        
+        <div id="ficha"  style="display:none;" >
+            <table> 
+                <thead>
+                    <tr>
+                        <th>TIPO</th>
+                        <th>PV</th>
+                        <th>PM</th>
+                        <th>CONSTITUIÇÃO</th>
+                        <th>DANO</th>
+                    </tr>
+                </thead>
+                <tbody id="topicos">
+                </tbody>
+            </table>
+        </div>
+		
+		
+
+		<script> 
+		    var rolagem = ['d4', 'd6', 'd8', 'd10', 'd12'];
+		
+
+            // gerando tabela
+            function montarTabela(resp){
+            	var qtd = document.getElementById("qtd").value;
+            
+            
+            	if (isNaN(qtd) || qtd == "") {
+            		alert("Digite um número válido!");
+            	} else {
+            		var ficha = document.getElementById("ficha");
+            		ficha.style.display= "block";
+            	
+            
+            		var table = document.getElementById("topicos");	
+            		
+            		
+            		for (var j=0; j < qtd; j++ ) {
+            			var vetObj = resp.dados;
+            			var tr = document.createElement("tr");
+            			for (var i=0; i < vetObj.length; i++) {
+            				var tdTipo = document.createElement("td");
+            				var tdPV = document.createElement("td");
+            				var tdPM = document.createElement("td");
+            				var tdConst = document.createElement("td");
+            				var tdDano = document.createElement("td");
+            				tdTipo.innerHTML = vetObj[i].tipo;
+            				tdPV.innerHTML = Math.floor(Math.random() * 40) + 10;
+            				tdPM.innerHTML = Math.floor(Math.random() * 30);
+            				tdConst.innerHTML = Math.floor(Math.random() * 15) + 5;
+            				tdDano.innerHTML = (Math.floor(Math.random() * 3) + 1) + rolagem[Math.floor(Math.random() * 5)];
+            				tr.appendChild(tdTipo);
+            				tr.appendChild(tdPV);
+            				tr.appendChild(tdPM);
+            				tr.appendChild(tdConst);
+            				tr.appendChild(tdDano);
+            				tr.classList.add(tdTipo.innerHTML);
+            			}
+            			table.appendChild(tr);
+            			var div = document.querySelector("#topicos");
+            		} 
+            	}
+            }
+            
+            
+            
+            
+            // chamando os botões
+            function inicCommon(){
+              	montarTabela({dados: [{tipo:"Comum", pv: "", pm:"", const:"", dano:""}]});
+            }
+            
+            function inicEnemy(){
+            	montarTabela({dados: [{tipo:"Inimigo", pv: "", pm:"", const:"", dano:""}]});
+            }
+            
+            function inicAlly(){
+            	montarTabela({dados: [{tipo:"Aliado", pv: "", pm:"", const:"", dano:""}]});
+            }
+            
+            function limpar(){
+            	var table = document.getElementById("topicos");
+            	table.innerHTML = "";
+            	var ficha = document.getElementById("ficha");
+            	ficha.style.display= "none";
+            }
+		
+		
+		</script>
+    </body>
+</html>
+
+<!-- A ideia é ser um gerador automatico de fichas de NPCs, onde você escolhe apenas o tipo: Comum (civíl, feirante, vendedor, etc), Adversário (monstros e inimigos humanoides ou não) ou aliados (podem ou não entrar em combate ao seu lado.) --> 

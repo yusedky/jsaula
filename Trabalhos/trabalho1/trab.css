@@ -2,12 +2,16 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-   /* color: #f99442;*/
-
 }
+
 
 h1{
     color: #7a0fd8;
+}
+
+
+#ficha{
+    display: none;
 }
 
 
@@ -17,9 +21,11 @@ td, th {
     padding: 3px;
 }
 
+
 td {
     padding: 3px 20px;
 } 
+
 
 .container {
     width: 550px;
@@ -34,6 +40,7 @@ td {
 .Inimigo {
     color: crimson;
 }
+
 
 .Aliado {
     color: #0dad72;
