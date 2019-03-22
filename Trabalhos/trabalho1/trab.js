@@ -34,18 +34,12 @@ function montarTabela(resp){
 				tr.appendChild(tdPM);
 				tr.appendChild(tdConst);
 				tr.appendChild(tdDano);
+				tr.classList.add(tdTipo.innerHTML);
 			}
 			table.appendChild(tr);
 			var div = document.querySelector("#topicos");
 		} 
-
-	
 	}
-	
-	
-	
-	
-
 }
 
 
